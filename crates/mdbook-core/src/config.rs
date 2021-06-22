@@ -330,6 +330,9 @@ pub struct BookConfig {
     /// The direction of text in the book: Left-to-right (LTR) or Right-to-left (RTL).
     /// When not specified, the text direction is derived from [`BookConfig::language`].
     pub text_direction: Option<TextDirection>,
+    /// A logo to be displayed on top of the navigation bar. The path is relative to the source
+    /// path
+    pub logo: Option<PathBuf>,
 }
 
 /// Helper for serde serialization.
@@ -346,6 +349,7 @@ impl Default for BookConfig {
             src: PathBuf::from("src"),
             language: Some(String::from("en")),
             text_direction: None,
+            logo: None,
         }
     }
 }
@@ -779,6 +783,8 @@ mod tests {
             src: PathBuf::from("source"),
             language: Some(String::from("ja")),
             text_direction: None,
+            // TODO: add a test logo
+            logo: None,
         };
         let build_should_be = BuildConfig {
             build_dir: PathBuf::from("outputs"),
