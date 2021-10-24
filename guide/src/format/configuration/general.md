@@ -50,7 +50,7 @@ This is general information about your book.
 - **text-direction**: The direction of text in the book: Left-to-right (LTR) or Right-to-left (RTL). Possible values: `ltr`, `rtl`.
   When not specified, the text direction is derived from the book's `language` attribute.
 - **logo:** Path to a logo to shown at the top of the navigation bar. If this
-  is given as a relative path, it's base directory is the source directory.
+  is given as a relative path, its base directory is the source directory.
 
 **book.toml**
 
