@@ -185,11 +185,12 @@ fn backends_receive_render_context_via_stdin() {
   },
   "config": {
     "book": {
+      "title": null,
       "authors": [],
       "description": null,
       "language": "en",
       "text-direction": null,
-      "title": null
+      "logo": null
     },
     "output": {
       "cat-to-file": {
