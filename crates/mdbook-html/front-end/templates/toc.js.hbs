@@ -9,9 +9,10 @@ class MDBookSidebarScrollbox extends HTMLElement {
     }
     connectedCallback() {
         {{#if book_logo }}
-        this.innerHTML = '<div class="sidebar-book-logo"><img src="' + path_to_root + '{{ book_logo }}" alt="{{ book_title }}"></div>';
+        this.innerHTML = '<div class="sidebar-book-logo"><img src="' + path_to_root + '{{ book_logo }}" alt="{{ book_title }}"></div>{{#toc}}{{/toc}}';
+        {{else}}
+        this.innerHTML = '{{#toc}}{{/toc}}';
         {{/if}}
-        this.innerHTML += '{{#toc}}{{/toc}}';
         // Set the current, active page, and reveal it if it's hidden
         let current_page = document.location.href.toString().split('#')[0].split('?')[0];
         if (current_page.endsWith('/')) {
