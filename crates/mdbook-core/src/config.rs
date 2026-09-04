@@ -746,6 +746,7 @@ mod tests {
         description = "A completely useless book"
         src = "source"
         language = "ja"
+        logo = "images/logo.svg"
 
         [build]
         build-dir = "outputs"
@@ -783,8 +784,7 @@ mod tests {
             src: PathBuf::from("source"),
             language: Some(String::from("ja")),
             text_direction: None,
-            // TODO: add a test logo
-            logo: None,
+            logo: Some(PathBuf::from("images/logo.svg")),
         };
         let build_should_be = BuildConfig {
             build_dir: PathBuf::from("outputs"),
